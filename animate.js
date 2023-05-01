@@ -18,35 +18,47 @@ function animateEmoji() {
 
 animateEmoji(); // 애니메이션 시작
 
-// setTimeout 실행 10초 후 애니메이션 종료, 순차적 실행, 비동기
-// setTimeout(function () {
-//   clearTimeout(timerId); // 타이머 종료
-// }, 10000);
-
 // 게임 결과
 const $span = document.querySelector("span");
 const $labels = document.querySelectorAll("label");
 let rsp = document.querySelector("p").innerText;
-rsp = 0;
+rsp = "✌️";
+let result = document.querySelector("p");
 
 $labels.forEach((el) => {
   el.addEventListener("click", (event) => {
     clearTimeout(timerId);
-    rsp = emojis[i + 2];
+
     const game = event.target.textContent;
-    console.log(game);
-    if (game == "가위" && rsp == "🖐") {
-      $span.innerHTML = "you win~~!";
-    } else if (game == "가위" && emojis[1]) {
-      $span.innerHTML = "이겼습니다!!";
+
+    //내가 가위 냈을 때
+    if (game == "가위" && result.innerText === "🖐") {
+      console.log(result.innerHTML);
+      $span.innerHTML = "이겼어유!";
+    } else if (game == "가위" && result.innerText === "✊") {
+      $span.innerHTML = "졌어유!!";
     } else {
-      $span.innerHTML = "아쉽지만 다음 기회에!";
+      $span.innerHTML = "비겼어유!";
     }
 
-    //왜인지는 모르겠지만 switch 안됨
-    //   switch (game) {
-    //     case game == "가위" && rsp == "✌️":
-    //       $span.innerHTML = "비겼습니다. 다시 도전!";
-    //   }
+    //내가 바위 냈을 때
+    if (game == "바위" && result.innerText === "🖐") {
+      console.log(result.innerHTML);
+      $span.innerHTML = "졌어유!";
+    } else if (game == "바위" && result.innerText === "✊") {
+      $span.innerHTML = "비겼어유!!";
+    } else {
+      $span.innerHTML = "이겼어유!";
+    }
+
+    //내가 보 냈을 때
+    if (game == "보" && result.innerText === "🖐") {
+      console.log(result.innerHTML);
+      $span.innerHTML = "비겼어유!";
+    } else if (game == "보" && result.innerText === "✊") {
+      $span.innerHTML = "이겼어유!!";
+    } else {
+      $span.innerHTML = "졌어유!";
+    }
   });
 });
