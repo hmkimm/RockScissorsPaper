@@ -19,12 +19,18 @@ section {
   justify-content: center;
 }
 
+span {
+  display: block;
+  margin-top: 60px;
+  text-align: center;
+  font-size: 30px;
+}
+
 @media (max-width: 420px) {
   body {
-    margin-top: 100px;
-    color: white;
+    margin-top: 230px;
   }
   h1 {
-    color: white;
+    font-size: 2em;
   }
 }
