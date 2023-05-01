@@ -11,10 +11,20 @@ p {
   align-items: center;
   justify-content: center;
   font-size: 80px;
-  box-shadow: inset 0 0 4px salmon;
+  /* box-shadow: inset 0 0 4px salmon; */
 }
 section {
   margin-top: 40px;
   display: flex;
   justify-content: center;
+}
+
+@media (max-width: 420px) {
+  body {
+    margin-top: 100px;
+    color: white;
+  }
+  h1 {
+    color: white;
+  }
 }
