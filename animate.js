@@ -6,7 +6,7 @@ let timerId = 0; // setTimeout의 리턴값 저장용 변수
 function animateEmoji() {
   document.getElementById("emoji").textContent = emojis[i]; // 현재 이모지 출력
   i = (i + 1) % 3;
-  timerId = setTimeout(animateEmoji, 500); // 1초마다 이모지 변경
+  timerId = setTimeout(animateEmoji, 300); // 1초마다 이모지 변경
 }
 /**
  * 1 = 0 + 1 / 3
@@ -31,7 +31,6 @@ const rspGame = () => {
       clearTimeout(timerId);
 
       const game = event.target.textContent;
-      console.log("내가 낸거", game);
 
       //내가 가위 냈을 때
       if (game == "가위") {
@@ -83,6 +82,12 @@ const rspGame = () => {
 };
 rspGame();
 
+const restart = () => {
+  const $btn = document.querySelector("button");
+  $btn.addEventListener("click", animateEmoji);
+};
+
+restart();
 //클릭 이벤트 안에 if문으로 작성했는데, 9가지의 경우이기 때문에 if 한개와 8개의 else if로 구성을 해야됨
 // if (game == "가위" && result.innerText === "🖐") {
 //   console.log(result.innerHTML);

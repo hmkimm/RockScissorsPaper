@@ -26,6 +26,13 @@ span {
   font-size: 30px;
 }
 
+button {
+  margin-top: 60px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 @media (max-width: 450px) {
   body {
     margin-top: 230px;
