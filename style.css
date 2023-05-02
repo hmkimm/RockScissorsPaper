@@ -26,7 +26,7 @@ span {
   font-size: 30px;
 }
 
-@media (max-width: 420px) {
+@media (max-width: 450px) {
   body {
     margin-top: 230px;
   }

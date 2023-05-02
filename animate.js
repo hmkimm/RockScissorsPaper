@@ -66,16 +66,15 @@ const rspGame = () => {
         switch (result.innerText) {
           case "🖐":
             $span.innerHTML = "비겼어유 다시 한 번!";
-            break;
             animateEmoji();
+            break;
 
           case "✊":
             $span.innerHTML = "이겼어유 🎉";
             break;
 
           default:
-            $span.innerHTML = "졌어유 ㅈ😞";
-
+            $span.innerHTML = "졌어유😞";
             break;
         }
       }
