@@ -21,8 +21,8 @@ animateEmoji(); // 애니메이션 시작
 // 게임 결과
 const $span = document.querySelector("span");
 const $labels = document.querySelectorAll("label");
-let rsp = document.querySelector("p").innerText;
-rsp = "✌️";
+// let rsp = document.querySelector("p").innerText;
+// rsp = "✌️";
 let result = document.querySelector("p");
 
 $labels.forEach((el) => {
@@ -30,35 +30,79 @@ $labels.forEach((el) => {
     clearTimeout(timerId);
 
     const game = event.target.textContent;
-
+    console.log("내가 낸거", game);
     //내가 가위 냈을 때
-    if (game == "가위" && result.innerText === "🖐") {
-      console.log(result.innerHTML);
-      $span.innerHTML = "이겼어유!";
-    } else if (game == "가위" && result.innerText === "✊") {
-      $span.innerHTML = "졌어유!!";
-    } else {
-      $span.innerHTML = "비겼어유!";
+    if (game == "가위") {
+      switch (result.innerText) {
+        case "🖐":
+          $span.innerHTML = "이겼어유 🎉";
+          break;
+
+        case "✊":
+          $span.innerHTML = "졌어유 😞";
+          break;
+
+        default:
+          $span.innerHTML = "비겼어유 다시 한 번!";
+      }
+    } else if (game == "바위") {
+      switch (result.innerText) {
+        case "🖐":
+          $span.innerHTML = "졌어유 😞";
+          break;
+
+        case "✊":
+          $span.innerHTML = "비겼어유 다시 한 번!";
+          break;
+
+        default:
+          $span.innerHTML = "이겼어유 🎉";
+      }
+    } else if (game == "보") {
+      switch (result.innerText) {
+        case "🖐":
+          $span.innerHTML = "비겼어유 다시 한 번!";
+          break;
+
+        case "✊":
+          $span.innerHTML = "이겼어유 🎉";
+          break;
+
+        default:
+          $span.innerHTML = "졌어유 😞";
+      }
     }
 
-    //내가 바위 냈을 때
-    if (game == "바위" && result.innerText === "🖐") {
-      console.log(result.innerHTML);
-      $span.innerHTML = "졌어유!";
-    } else if (game == "바위" && result.innerText === "✊") {
-      $span.innerHTML = "비겼어유!!";
-    } else {
-      $span.innerHTML = "이겼어유!";
-    }
+    // if (game == "가위" && result.innerText === "🖐") {
+    //   console.log(result.innerHTML);
+    //   $span.innerHTML = "이겼어유!";
+    // } else if (game == "가위" && result.innerText === "✊") {
+    //   $span.innerHTML = "졌어유!!";
+    // } else if (game == "가위" && result.innerText === "✌️") {
+    //   $span.innerText = "비겼어유!";
+    //   console.log("왜 안돼");
+    // }
 
-    //내가 보 냈을 때
-    if (game == "보" && result.innerText === "🖐") {
-      console.log(result.innerHTML);
-      $span.innerHTML = "비겼어유!";
-    } else if (game == "보" && result.innerText === "✊") {
-      $span.innerHTML = "이겼어유!!";
-    } else {
-      $span.innerHTML = "졌어유!";
-    }
+    // //내가 바위 냈을 때
+    // if (game == "바위" && result.innerText === "🖐") {
+    //   console.log(result.innerHTML);
+    //   $span.innerHTML = "졌어유eee!";
+    //   console.log("뭐지");
+    // } else if (game == "바위" && result.innerText === "✊") {
+    //   $span.innerHTML = "비겼어유!!";
+    // } else if (game == "바위" && result.innerText === "✌️") {
+    //   console.log(result.innerText);
+    //   $span.innerHTML = "이겼어유!";
+    // }
+
+    // //내가 보 냈을 때
+    // if (game == "보" && result.innerText === "🖐") {
+    //   console.log(result.innerHTML);
+    //   $span.innerHTML = "비겼어유!";
+    // } else if (game == "보" && result.innerText === "✊") {
+    //   $span.innerHTML = "이겼어유!!";
+    // } else {
+    //   $span.innerHTML = "졌어유!";
+    // }
   });
 });
