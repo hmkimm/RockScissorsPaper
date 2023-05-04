@@ -85,6 +85,9 @@ rspGame();
 const restart = () => {
   const $btn = document.querySelector("button");
   $btn.addEventListener("click", animateEmoji);
+  $btn.addEventListener("click", () => {
+    $span.innerText = "결과는?";
+  });
 };
 
 restart();
