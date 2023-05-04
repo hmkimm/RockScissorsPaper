@@ -13,7 +13,7 @@ function animateEmoji() {
  * 2 = 1 + 1 / 3
  * 0 = 2 + 1 / 3
  * 1 = 0 + 1  / 3
- * 반복
+ * 반복하기
  **/
 
 animateEmoji(); // 애니메이션 시작
