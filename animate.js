@@ -2,16 +2,15 @@ const emojis = ["✌️", "✊", "🖐"]; // 순서대로 이모지 배열
 const $btn = document.querySelector("button");
 
 let i = 0; // 현재 이모지의 인덱스
-let timerId = 0; // setTimeout의 리턴값 저장용 변수
+let timerId; // setTimeout의 리턴값 저장용 변수
 
 function animateEmoji() {
   document.getElementById("emoji").innerText = emojis[i]; // 현재 이모지 출력
   // i = parseInt(Math.random() * 3); //이렇게 하면 이모지 넘어갈 때 약간의 딜레이 발생
   i = (i + 1) % 3;
-  timerId = setTimeout(animateEmoji, 200); // 0.2초마다 이모지 변경
+  timerId = setTimeout(animateEmoji, 200);
 }
-
-animateEmoji(); // 애니메이션 시작
+animateEmoji();
 
 // 게임 결과 변수
 const $span = document.querySelector("span");
