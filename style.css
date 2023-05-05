@@ -35,7 +35,7 @@ button {
 
 @media (max-width: 450px) {
   body {
-    margin-top: 230px;
+    margin-top: 150px;
   }
   h1 {
     font-size: 2em;
