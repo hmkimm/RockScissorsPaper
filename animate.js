@@ -72,7 +72,7 @@ $labels.forEach((el) => {
   });
 });
 
-//FIXME: 첫 클릭 없이 다시 시작하면 무한 재생!
+//FIXME: 첫 클릭 없이 다시 시작하면 무한 재생!!
 let isBtnClicked = false;
 let clickResult = 0
 
