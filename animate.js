@@ -72,9 +72,30 @@ $labels.forEach((el) => {
   });
 });
 
+//FIXME: 첫 클릭 없이 다시 시작하면 무한 재생
+let isBtnClicked = false;
+let clickResult = 0
+
+$labels.forEach((el) => {
+  el.addEventListener("click", (e) => {
+clickResult = e.target.textContent; 
+console.log(clickResult);
+  });
+});
+
 const restart = () => {
-  animateEmoji();
-  $span.innerText = "결과는?";
+  $btn.addEventListener("click", () => {
+    isBtnClicked = true; //클릭하면 clickResult를 true로 바꿈, 버튼 클릭 여부 알기 위해
+
+  });
+
+  if (clickResult == "" && isBtnClicked == false) {
+    alert("게임을 먼저 수행하세요!");
+  } else {
+    animateEmoji();
+    $span.innerText = "결과는?";
+  }
 };
+
 
 $btn.addEventListener("click", restart);
