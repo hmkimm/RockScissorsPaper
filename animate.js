@@ -14,10 +14,10 @@ function animateEmoji() {
 }
 animateEmoji();
 
-let randomCal = () => {
-  i = parseInt(Math.random() * 3);
-  randomEmoji.innerText = emojis[i];
-};
+// let randomCal = () => {
+//   i = parseInt(Math.random() * 3);
+//   randomEmoji.innerText = emojis[i];
+// };
 //TODO: 랜덤값이랑 내가 낸 결과랑 비교하면, 화면에 나오는 결과랑 달라서 사용자 혼란
 
 // 게임 결과 변수
@@ -40,14 +40,13 @@ $labels.forEach((el) => {
 
         case "✊":
           $span.innerHTML = "졌어요 😞";
-
           break;
 
         default:
-          $span.innerHTML = "비겼어요 다시 한 번!"
-            $btn.classList.add("hidden");
-            animateEmoji(); 
-  
+          $span.innerHTML = "비겼어요 다시 한 번!";
+          $btn.classList.add("hidden");
+          animateEmoji();
+          break
       }
     } else if (clickResult == "바위") {
       switch (computerResult.innerText) {
@@ -57,7 +56,7 @@ $labels.forEach((el) => {
 
         case "✊":
           $span.innerHTML = "비겼어요 다시 한 번!";
-          $btn.classList.add("hidden")
+          $btn.classList.add("hidden");
           animateEmoji();
           break;
 
@@ -81,6 +80,12 @@ $labels.forEach((el) => {
           break;
       }
     }
+
+     else if ( $span.innerHTML == "비겼어요 다시 한 번!" && ($span.innerHTML == "이겼어요 🎉") || ($span.innerHTML == "졌어요 😞")) {
+      $btn.classList.remove("hidden");
+      console.log(3333);
+    }
+
   });
 });
 
@@ -90,7 +95,6 @@ let isBtnClicked = false;
 $labels.forEach((el) => {
   el.addEventListener("click", (e) => {
     clickResult = e.target.textContent;
-    console.log(clickResult);
   });
 });
 
@@ -108,3 +112,11 @@ const restart = () => {
 };
 
 $btn.addEventListener("click", restart);
+
+let a = 10
+if( a > 5) {
+  console.log('true');
+} else {
+  console.log('false')
+}
+console.log('finish');
