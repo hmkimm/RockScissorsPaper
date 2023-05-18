@@ -44,7 +44,6 @@ $labels.forEach((el) => {
 
         default:
           $span.innerHTML = "비겼어요 다시 한 번!";
-          $btn.classList.add("hidden");
           animateEmoji();
           break
       }
@@ -56,7 +55,6 @@ $labels.forEach((el) => {
 
         case "✊":
           $span.innerHTML = "비겼어요 다시 한 번!";
-          $btn.classList.add("hidden");
           animateEmoji();
           break;
 
@@ -67,7 +65,6 @@ $labels.forEach((el) => {
       switch (computerResult.innerText) {
         case "🖐":
           $span.innerHTML = "비겼어요 다시 한 번!";
-          $btn.classList.add("hidden");
           animateEmoji();
           break;
 
@@ -81,10 +78,10 @@ $labels.forEach((el) => {
       }
     }
 
-     else if ( $span.innerHTML == "비겼어요 다시 한 번!" && ($span.innerHTML == "이겼어요 🎉") || ($span.innerHTML == "졌어요 😞")) {
-      $btn.classList.remove("hidden");
-      console.log(3333);
-    }
+    //  else if ( $span.innerHTML == "비겼어요 다시 한 번!" && ($span.innerHTML == "이겼어요 🎉") || ($span.innerHTML == "졌어요 😞")) {
+    //   $btn.classList.remove("hidden");
+    //   console.log(3333);
+    // }
 
   });
 });
@@ -112,11 +109,3 @@ const restart = () => {
 };
 
 $btn.addEventListener("click", restart);
-
-let a = 10
-if( a > 5) {
-  console.log('true');
-} else {
-  console.log('false')
-}
-console.log('finish');
