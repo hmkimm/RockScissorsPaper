@@ -10,4 +10,4 @@
 ### 이기거나 진 경우 ➡️ 바로 게임 종료
 ![GIFMaker_me (1)](https://github.com/hmkimm/RockScissorsPaper/assets/124167002/49d8617a-2dae-4de0-9127-a53e87e97e94)
 
-#### 📌 실행 URL: https://hmkimm.github.io/RockScissorsPaper/
+#### 📌 실행URL: https://hmkimm.github.io/RockScissorsPaper/
